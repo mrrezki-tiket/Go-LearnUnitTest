@@ -8,6 +8,19 @@ import (
 	"testing"
 )
 
+func BenchmarkHelloWordSub(b *testing.B) {
+	b.Run("Rezki", func(b *testing.B) {
+		for i := 0; i < b.N; i++ {
+			HelloWord("Rezki")
+		}
+	})
+	b.Run("Nando", func(b *testing.B) {
+		for i := 0; i < b.N; i++ {
+			HelloWord("Nando")
+		}
+	})
+}
+
 func BenchmarkHelloWord(b *testing.B) {
 	for i := 0; i < b.N; i++ {
 		HelloWord("Rezki")
